@@ -5,7 +5,7 @@
         }
         public function index() {
             $this->view->title = "Error"; 
-            $this->view->setMasterPage("views/master_nomenu.php");
+            $this->view->setMasterPage("master_nomenu");
             $this->view->renderView(__CLASS__,__FUNCTION__);
         }
     }
