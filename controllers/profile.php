@@ -2,6 +2,8 @@
 class Profile extends Controller{
     public function __construct(){
         parent::__construct();
+        if(!Session::Auth())
+            header("Location: ../");
     }
 
     public function index(){
@@ -9,7 +11,7 @@ class Profile extends Controller{
            $id = $_GET['id'];
        }
        else{
-           $id = 0;
+           $id = Session::getKey('id');
        }
        $this->view->id = $id;
        $this->view->title = "Profile";
