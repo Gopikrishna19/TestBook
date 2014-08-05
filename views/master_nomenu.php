@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Testbook <?php echo isset($this->title)?"| ".$this->title:""; ?></title>
-        <link href="common/css/master.css" type="text/css" rel="stylesheet">
-        <link href="views/index/css/login.css" type="text/css" rel="stylesheet">
+        <link href="/common/css/master.css" type="text/css" rel="stylesheet">
+        <link href="/views/index/css/login.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <div class="header">

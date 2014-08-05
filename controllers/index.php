@@ -4,7 +4,7 @@
         public function __construct() {
             parent::__construct();
             if(Session::Auth()){
-                header("Location: ../profile");
+                header("Location: /profile");
             }
         }
         public function index() {
@@ -25,7 +25,7 @@
         }
         public function logout(){
             Session::destroy();
-            header("Location: ../");
+            header("Location: /");
         }
      }
 ?>

@@ -25,13 +25,13 @@
         </form>
     </div>
 </div>
-<script src="common/js/jquery.js"></script>
+<script src="/common/js/jquery.js"></script>
 <script>
     $(".login").submit(function (e) {
         e.preventDefault();
         var login = $(".login");
         $.ajax({
-            url: "./index/xhrLogin/",
+            url: "/index/xhrLogin/",
             data: {
                 uname: $("#email", login).val(),
                 upass: $("#upass", login).val()
@@ -39,7 +39,7 @@
             success: function (e) {
                 console.log(e);
                 if (e == "no") $(".login .error").html("Invalid user name or password");
-                else if (e == "yes") window.location.href = "../profile";
+                else if (e == "yes") window.location.href = "/profile";
             }
         })
 

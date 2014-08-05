@@ -3,7 +3,7 @@ class Profile extends Controller{
     public function __construct(){
         parent::__construct();
         if(!Session::Auth())
-            header("Location: ../");
+            header("Location: /");
     }
 
     public function index(){
