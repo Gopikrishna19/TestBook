@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>TestBook <?php echo isset($this->title)?"| ".$this->title:""; ?></title>
+        <title>Testbook <?php echo isset($this->title)?"| ".$this->title:""; ?></title>
         <link href="public/css/master.css" type="text/css" rel="stylesheet">
 
         <?php for($i=0; $i<sizeof($this->css);$i++): ?>

@@ -1,0 +1,51 @@
+@back-color: #F8F8F8;
+@head-color: #FF8800;
+@fore-color: #333333;
+
+* {
+    /* reset font */
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    color: @fore-color;
+    
+    /* reset layout */
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: @back-color;
+}
+
+.center-it {
+    width: 95%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.header {
+    background-color: @head-color;
+
+    h2 {
+        padding: 16px 4px;
+        color: #fff;
+        font-size: 2em;
+    }
+}
+
+.content {
+    overflow: auto;
+}
+
+.footer {
+    .center-it();
+    padding-top: 4em;
+    padding-left: 4px;
+    font-size: 0.75em;
+    clear: both;
+}

@@ -1,2 +1,44 @@
+* {
+  /* reset font */
+
+  font-family: sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #333333;
+  /* reset layout */
+
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
 body {
+  background-color: #f8f8f8;
+}
+.center-it {
+  width: 95%;
+  max-width: 1000px;
+  margin: auto;
+}
+.header {
+  background-color: #ff8800;
+}
+.header h2 {
+  padding: 16px 4px;
+  color: #fff;
+  font-size: 2em;
+}
+.content {
+  overflow: auto;
+}
+.footer {
+  width: 95%;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 4em;
+  padding-left: 4px;
+  font-size: 0.75em;
+  clear: both;
 }

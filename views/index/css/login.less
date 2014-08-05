@@ -1,0 +1,73 @@
+@link-color: #3BE;
+@link-hover: darken(@link-color, 10%);
+@link-active: darken(@link-hover, 5%);
+@button-face: #f80;
+@button-hover: darken(@button-face, 10%);
+@button-active: darken(@button-hover, 5%);
+
+.article {
+    padding: 16px 4px;
+    font-size: 1.25em;
+}
+
+.left, .right {
+    float: left;
+    width: 50%;
+    padding: 16px 4px;
+
+    form > * {
+        display: block;
+        margin-bottom: 0.5em;
+        margin-left: 2em;
+    }
+
+    h4 {
+        font-size: 1.75em;
+        margin-bottom: 1em;
+    }
+
+    .txt {
+        line-height: 1.5em;
+        display: block;
+        max-width: 300px;
+        width: 100%;
+        padding: 4px 8px;
+        border-radius: 3px;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        border: 1px solid #888;
+
+        &:focus {
+            background-color: #FFF;
+        }
+    }
+
+    .btn {
+        background-color: #f80;
+        border: none;
+        padding: 4px 8px;
+        color: #FFF;
+        font-weight: bold;
+        border-radius: 3px;
+
+        &:hover {
+            background-color: @button-hover;
+        }
+
+        &:active {
+            background-color: @button-active;
+        }
+    }
+
+    a {        
+        color: @link-color;
+
+        &:hover {
+            color: @link-hover;
+        }
+
+        &:active {
+            color: @link-active;
+        }
+    }
+}
