@@ -28,6 +28,7 @@
 <script src="/common/js/jquery.js"></script>
 <script>
     $(".login").submit(function (e) {
+        
         e.preventDefault();
         var login = $(".login");
         $.ajax({
@@ -37,6 +38,8 @@
                 upass: $("#upass", login).val()
             },
             success: function (e) {
+                
+                e = e.trim();
                 console.log(e);
                 if (e == "no") $(".login .error").html("Invalid user name or password");
                 else if (e == "yes") window.location.href = "/profile";

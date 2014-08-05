@@ -14,14 +14,17 @@
         }
 
         public function xhrLogin() {
-            if($_REQUEST['uname']=="admin" && $_REQUEST['upass']=="gpmk") {
+             $arr = $this->model->readUser($_REQUEST['uname'], $_REQUEST['upass']);
+             if($arr[0]['count(*)']>0) {
                 Session::init();
                 Session::setKey('uname', $_REQUEST['uname']);
                 Session::setKey('id', 1);
                 echo "yes";
             } else {
                 echo "no";
-            }
+            }   
+           
+
         }
         public function logout(){
             Session::destroy();

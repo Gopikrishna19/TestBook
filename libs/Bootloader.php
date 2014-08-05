@@ -14,6 +14,7 @@
     
             require_once "controllers/".$url[0].".php";
             $controller = new $url[0]();
+            $controller->loadModel($url[0]);
     
             $length = sizeof($url);
             $func = "index";
