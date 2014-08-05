@@ -5,15 +5,9 @@
             parent::__construct();
         }
         public function index() {
+            $this->view->title="Login";
+            $this->view->setMasterPage("views/master_nomenu.php");
             $this->view->renderView(__CLASS__,__FUNCTION__);
-             }
-       
-        public function get($id=NULL){
-            
-            if($id!=NULL)
-                $this->view->id = $id;
-            $this->view->renderView(__CLASS__,__FUNCTION__);
-            
         }
      }
 ?>
