@@ -1,7 +1,7 @@
 
 <div class="center-it">
     <div class="article">
-                    Welcome to Testbook! Connect and share your thoughts with your friends.
+        Welcome to Testbook! Connect and share your thoughts with your friends.
     </div>
     <div class="left">
         <h4>Register</h4>
