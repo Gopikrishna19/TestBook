@@ -7,7 +7,7 @@ class ActionLink{
         $param = $param ? ($action ? "/$param" : "/index/$param") : "";
         $query = $query ? "?".http_build_query($query) : "";
 
-        echo "<a href='$controller$action$param$query' class='$class' id='$id'>$link</a>";
+        echo "<a href='/$controller$action$param$query' class='$class' id='$id'>$link</a>";
     }
 }
 ?>
