@@ -24,6 +24,7 @@
             <?php ActionLink::create("Forgot your password?","#"); ?>
         </form>
     </div>
+<<<<<<< HEAD
 </div>
 <script src="/common/js/jquery.js"></script>
 <script>
@@ -49,3 +50,6 @@
         return false;
     })
 </script>
+=======
+</div>
+>>>>>>> 2eec2f698f9b1238158c0db9d46b6cdeb7aa0d83
