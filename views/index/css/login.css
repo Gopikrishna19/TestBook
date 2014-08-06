@@ -12,11 +12,28 @@
 .left form,
 .right form {
   padding-left: 2em;
+  position: relative;
+}
+.left form .loader,
+.right form .loader {
+  position: absolute;
+  top: 110px;
+  left: 110px;
+  bottom: 15px;
+  right: 325px;
+  display: none;
 }
 .left h4,
 .right h4 {
   font-size: 1.75em;
   margin-bottom: 1em;
+}
+.left .error,
+.right .error {
+  display: none;
+  color: #f00;
+  padding-left: 2em;
+  margin-bottom: 0.5em;
 }
 .left .txt,
 .right .txt {

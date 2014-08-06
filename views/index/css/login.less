@@ -17,11 +17,28 @@
 
     form {
         padding-left: 2em;
+        position: relative;
+
+        .loader {
+            position: absolute;
+            top: 110px;
+            left: 110px;
+            bottom: 15px;
+            right: 325px;
+            display: none;
+        }
     }
-    
+
     h4 {
         font-size: 1.75em;
         margin-bottom: 1em;
+    }
+
+    .error {
+        display: none;
+        color: #f00;
+        padding-left: 2em;
+        margin-bottom: 0.5em;
     }
 
     .txt {
@@ -56,7 +73,7 @@
         }
     }
 
-    a {        
+    a {
         color: @link-color;
 
         &:hover {

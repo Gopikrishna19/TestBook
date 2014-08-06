@@ -15,12 +15,13 @@
     </div>
     <div class="right">
         <h4>Sign In</h4>
+        <div class="error"></div>
         <form class="login">
-            <div class="error" style="color: #f00"></div>
-            <input type="text" id="email" placeholder="Email" class="txt">
+            <input type="text" id="email" placeholder="Email" class="txt" autocomplete="off">
             <input type="password" id="upass" placeholder="Password" class="txt">
             <label for="ukeep"><input type="checkbox" id="ukeep"> Remember Me</label>
             <input type="submit" value="Sign In" class="btn">
+            <div class="loader"></div>
             <?php ActionLink::create("Forgot your password?","#"); ?>
         </form>
     </div>
@@ -28,7 +29,7 @@
 <script src="/common/js/jquery.js"></script>
 <script>
     $(".login").submit(function (e) {
-        
+
         e.preventDefault();
         var login = $(".login");
         $.ajax({
@@ -37,12 +38,19 @@
                 uname: $("#email", login).val(),
                 upass: $("#upass", login).val()
             },
+            beforeSend: function () {
+                $(".loader").fadeIn();
+            },
             success: function (e) {
-                
                 e = e.trim();
-                console.log(e);
-                if (e == "no") $(".login .error").html("Invalid user name or password");
+                if (e == "no") $(".error").html("Invalid user name or password").slideDown();
                 else if (e == "yes") window.location.href = "/profile";
+
+                // Hide error after 5 seconds
+                setTimeout(function () { $(".error").slideUp().html("&nbsp;"); }, 5000);
+            },
+            complete: function () {
+                $(".loader").fadeOut();
             }
         })
 

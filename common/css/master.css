@@ -38,6 +38,12 @@ body {
 .content {
   overflow: auto;
 }
+.loader {
+  background-image: url(../img/loader.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: none;
+}
 .footer {
   width: 95%;
   max-width: 1000px;
