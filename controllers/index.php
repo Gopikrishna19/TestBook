@@ -9,7 +9,9 @@
         }
         public function index() {
             $this->view->title="Login";
+            $this->view->css[] = "login";
             $this->view->setMasterPage("master_nomenu");
+
             $this->view->renderView(__CLASS__,__FUNCTION__);
         }
 
@@ -23,8 +25,6 @@
             } else {
                 echo "no";
             }   
-           
-
         }
         public function logout(){
             Session::destroy();

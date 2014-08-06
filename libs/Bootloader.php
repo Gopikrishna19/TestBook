@@ -8,28 +8,29 @@
             $this->getUrl();
             $url = $this->_url;
     
-            if(!file_exists("controllers/".$url[0].".php")) {
-                $url[0] = "error";
-            }
-    
-            require_once "controllers/".$url[0].".php";
-            $controller = new $url[0]();
-            $controller->loadModel($url[0]);
-    
-            $length = sizeof($url);
+            $controller = NULL;
             $func = "index";
 
-            switch($length) {
-                case 3: $param = $url[2];
-                case 2: if(method_exists($controller, $url[1])) $func = $url[1];
-                        else $controller = new Error();
-                        break;
+            if(!file_exists("controllers/".$url[0].".php")) {
+                $controller = new Error(404);
+            } else {
+                require_once "controllers/".$url[0].".php";
+                $controller = new $url[0]();
+                $controller->loadModel($url[0]);   
+                $length = sizeof($url);
                 
+                switch($length) {
+                    case 3: $param = $url[2];
+                    case 2: if(method_exists($controller, $url[1])) $func = $url[1];
+                            else $controller = new Error(503);
+                            break;
+                }
             }
+
             if(isset($param))
-            $controller->$func($param);
+                $controller->$func($param);
             else
-            $controller->$func();
+                $controller->$func();
         }
     
         function getUrl() {

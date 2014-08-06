@@ -1,0 +1,9 @@
+.message {
+    font-size: 1.75em;
+    font-weight: bold;
+    padding: 16px 4px;
+}
+
+.resource {
+    font-family: monospace;
+}
