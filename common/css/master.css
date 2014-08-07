@@ -53,3 +53,12 @@ body {
   font-size: 0.75em;
   clear: both;
 }
+a {
+  color: #33bbee;
+}
+a:hover {
+  color: #12a5dc;
+}
+a:active {
+  color: #1093c4;
+}

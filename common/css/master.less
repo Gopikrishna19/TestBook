@@ -1,6 +1,9 @@
 @back-color: #F8F8F8;
 @head-color: #FF8800;
 @fore-color: #333333;
+@link-color: #3BE;
+@link-hover: darken(@link-color, 10%);
+@link-active: darken(@link-hover, 5%);
 
 * {
     /* reset font */
@@ -10,7 +13,6 @@
     font-style: normal;
     text-decoration: none;
     color: @fore-color;
-    
     /* reset layout */
     padding: 0;
     margin: 0;
@@ -61,4 +63,16 @@ body {
     padding-left: 4px;
     font-size: 0.75em;
     clear: both;
+}
+
+a {
+    color: @link-color;
+
+    &:hover {
+        color: @link-hover;
+    }
+
+    &:active {
+        color: @link-active;
+    }
 }

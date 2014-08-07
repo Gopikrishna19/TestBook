@@ -16,7 +16,7 @@
         }
 
         public function xhrLogin() {
-             $arr = $this->model->readUser($_REQUEST['uname'], $_REQUEST['upass']);
+             $arr = $this->model->readUser($_REQUEST['email'], $_REQUEST['upass']);
              if($arr[0]['count(*)']>0) {
                 Session::init();
                 Session::setKey('uname', $_REQUEST['uname']);
@@ -30,5 +30,22 @@
             Session::destroy();
             header("Location: /");
         }
+        public function register(){
+            if(!isset($_POST["register"])){
+                $err = new Error(400);
+                $err->index();
+                die;
+            }
+            $uname = $_POST["uname"];
+            $upass = $_POST["upass"];
+            $email = $_POST["email"];
+            $this->model->createUser($uname,$upass,$email);
+
+            $this->view->title = "Success";
+            $this->view->setMasterPage("master_nomenu");
+            $this->view->renderView(__CLASS__,__FUNCTION__);
+
+        }
+
      }
 ?>

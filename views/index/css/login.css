@@ -35,6 +35,11 @@
   padding-left: 2em;
   margin-bottom: 0.5em;
 }
+.left .error ul,
+.right .error ul {
+  font-size: .75em;
+  padding-left: 2em;
+}
 .left .txt,
 .right .txt {
   line-height: 1.5em;
@@ -67,15 +72,6 @@
 .right .btn:active {
   background-color: #b35f00;
 }
-.left a,
-.right a {
-  color: #33bbee;
-}
-.left a:hover,
-.right a:hover {
-  color: #12a5dc;
-}
-.left a:active,
-.right a:active {
-  color: #1093c4;
+.left .error {
+  padding: 0;
 }
