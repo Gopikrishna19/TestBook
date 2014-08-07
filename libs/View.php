@@ -3,6 +3,7 @@
 class View {
     public $css = array();
     public $js = array();
+    public $postjs = array();
 
     private $header = "views/master/header.php";
     private $footer = "views/master/footer.php";

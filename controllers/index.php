@@ -7,29 +7,33 @@
                 header("Location: /profile");
             }
         }
+
         public function index() {
             $this->view->title="Login";
             $this->view->css[] = "login";
+            $this->view->postjs[] = "login";
             $this->view->setMasterPage("master_nomenu");
 
             $this->view->renderView(__CLASS__,__FUNCTION__);
         }
 
         public function xhrLogin() {
-             $arr = $this->model->readUser($_REQUEST['email'], $_REQUEST['upass']);
-             if($arr[0]['count(*)']>0) {
+            $arr = $this->model->readUser($_REQUEST['email'], $_REQUEST['upass']);
+            if($arr[0]['count(*)']>0) {
                 Session::init();
-                Session::setKey('uname', $_REQUEST['uname']);
-                Session::setKey('id', 1);
+                Session::setKey('uname', $_REQUEST['email']);
+                Session::setKey('id', $arr[0]['id']);
                 echo "yes";
             } else {
                 echo "no";
             }   
         }
+
         public function logout(){
             Session::destroy();
             header("Location: /");
         }
+
         public function register(){
             if(!isset($_POST["register"])){
                 $err = new Error(400);
@@ -44,8 +48,16 @@
             $this->view->title = "Success";
             $this->view->setMasterPage("master_nomenu");
             $this->view->renderView(__CLASS__,__FUNCTION__);
-
         }
 
+        public function xhrUserExists() {
+            $email = $_REQUEST["email"];
+            $arr = $this->model->checkUser($email);            
+            if($arr[0]['count(*)']>0) {
+                echo "yes";
+            } else {
+                echo "no";
+            }   
+        }
      }
 ?>
