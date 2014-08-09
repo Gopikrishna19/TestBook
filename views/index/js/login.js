@@ -40,6 +40,9 @@ $(function () {
     $("input", register).keypress(function () { $(this).next(".error").slideUp(); });
     $("input", register).change(function () { $(this).val($(this).val().trim()); });
     $("#cmail", register).change(function () { toggleError($(this), $("#email", register).val() != $(this).val()); });
+    $("#email", register).change(function () {
+        toggleError($(this), !/^[0-9a-zA-Z._]+@[a-z0-9A-Z._]+\.[a-z]{2,5}$/.test($(this).val()));
+    });
 
     $(".register").submit(function (event) {
         error = 0;
