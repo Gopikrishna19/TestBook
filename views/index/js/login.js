@@ -2,15 +2,12 @@ $(function () {
     var register = $(".register");
     var login = $(".login");
     var error = 0;
+    var mailreg = /^[0-9a-zA-Z._]+@[a-z0-9A-Z._]+\.[a-z]{2,5}$/;
+    var passreg = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}$/;
 
     function toggleError(ele, cond) {
-        if (cond) {
-            ele.next(".error").stop().slideDown();
-            error += 1;
-        }
-        else {
-            ele.next(".error").stop().slideUp();
-        }
+        if (cond) { ele.next(".error").stop().slideDown(); error += 1; }
+        else ele.next(".error").stop().slideUp();
     }
 
     function checkUser() {
@@ -40,18 +37,16 @@ $(function () {
     $("input", register).keypress(function () { $(this).next(".error").slideUp(); });
     $("input", register).change(function () { $(this).val($(this).val().trim()); });
     $("#cmail", register).change(function () { toggleError($(this), $("#email", register).val() != $(this).val()); });
-    $("#email", register).change(function () {
-        toggleError($(this), !/^[0-9a-zA-Z._]+@[a-z0-9A-Z._]+\.[a-z]{2,5}$/.test($(this).val()));
-    });
+    $("#email", register).change(function () { toggleError($(this), !mailreg.test($(this).val())); });
 
     $(".register").submit(function (event) {
         error = 0;
         try {
             checkUser();
             toggleError($("#uname", register), $("#uname", register).val().trim() == "");
-            toggleError($("#email", register), !/^[0-9a-zA-Z._]+@[a-z0-9A-Z._]+\.[a-z]{2,5}$/.test($("#email", register).val()));
+            toggleError($("#email", register), !mailreg.test($("#email", register).val()));
             toggleError($("#cmail", register), $("#email", register).val() != $("#cmail", register).val());
-            toggleError($("#upass", register), !/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}$/.test($("#upass", register).val()));
+            toggleError($("#upass", register), !passreg.test($("#upass", register).val()));
         } catch (ex) {
             console.log(ex);
             event.preventDefault();

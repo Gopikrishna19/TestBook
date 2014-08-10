@@ -1,4 +1,4 @@
-@button-face: #f80;
+@button-face: #aa5939;
 @button-hover: darken(@button-face, 10%);
 @button-active: darken(@button-hover, 5%);
 
@@ -59,7 +59,7 @@
     }
 
     .btn {
-        background-color: #f80;
+        background-color: @button-face;
         border: none;
         padding: 4px 8px;
         color: #FFF;
@@ -68,10 +68,12 @@
 
         &:hover {
             background-color: @button-hover;
+            box-shadow: 0 2px 2px #888;
         }
 
         &:active {
             background-color: @button-active;
+            box-shadow: none;
         }
     }
 }

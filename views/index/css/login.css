@@ -57,7 +57,7 @@
 }
 .left .btn,
 .right .btn {
-  background-color: #f80;
+  background-color: #aa5939;
   border: none;
   padding: 4px 8px;
   color: #FFF;
@@ -66,11 +66,13 @@
 }
 .left .btn:hover,
 .right .btn:hover {
-  background-color: #cc6d00;
+  background-color: #84452c;
+  box-shadow: 0 2px 2px #888;
 }
 .left .btn:active,
 .right .btn:active {
-  background-color: #b35f00;
+  background-color: #713b26;
+  box-shadow: none;
 }
 .left .error {
   padding: 0;

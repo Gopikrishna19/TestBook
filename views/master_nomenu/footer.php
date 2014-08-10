@@ -1,5 +1,5 @@
 </div>
-<div class="footer">
+<div class="footer center-it">
     &copy; Copyright, 2014. All rights reserved
 </div>
 <?php for($i=0; $i<sizeof($this->postjs);$i++): ?>

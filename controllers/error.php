@@ -11,9 +11,9 @@
             503 => "Service Unavailable"
         );
 
-        public function __construct($num) {
+        public function __construct($num = 404) {
             parent::__construct();
-            $this->num = $num ? $num : 404;
+            $this->num = $num;
         }
 
         public function index() {

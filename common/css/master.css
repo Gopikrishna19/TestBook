@@ -23,14 +23,38 @@ body {
   width: 95%;
   max-width: 1000px;
   margin: auto;
+  overflow: auto;
 }
 .header {
-  background-color: #ff8800;
+  background-color: #aa5939;
 }
 .header h2 {
   padding: 16px 4px;
   color: #fff;
   font-size: 2em;
+  float: left;
+}
+.header a {
+  float: right;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 69px;
+  margin-right: 50px;
+  font-weight: bold;
+}
+.header a:hover {
+  color: #FFF;
+}
+.header .notify {
+  float: right;
+  margin-top: 22px;
+  background-image: url(../img/notify.png);
+  background-position: center bottom;
+  height: 25px;
+  width: 25px;
+  margin-right: 16px;
+}
+.header .notify:hover {
+  background-position: center top;
 }
 .article {
   padding: 16px 4px;
@@ -46,9 +70,6 @@ body {
   display: none;
 }
 .footer {
-  width: 95%;
-  max-width: 1000px;
-  margin: auto;
   padding-top: 4em;
   padding-left: 4px;
   font-size: 0.75em;

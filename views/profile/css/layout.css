@@ -1,0 +1,68 @@
+.content {
+  padding: 8px;
+  max-width: 1500px;
+  margin: auto;
+}
+.left,
+.middle,
+.right {
+  padding: 16px;
+}
+.left {
+  width: 200px;
+  float: left;
+}
+.middle {
+  margin-left: 208px;
+  margin-right: 258px;
+}
+.right {
+  float: right;
+  width: 250px;
+}
+.menu {
+  list-style: none;
+}
+.menu a {
+  display: block;
+  padding-left: 44px;
+  height: 44px;
+  line-height: 36px;
+  color: #aa5939;
+  background-image: url(/common/img/profile.png);
+  background-size: 36px 108px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  border: 4px solid transparent;
+}
+.menu a:hover,
+.menu a.selected {
+  color: #FFF;
+  background-color: #aa5939;
+  background-position: left top;
+  border-color: #aa5939;
+}
+.menu a:active,
+.menu a.selected {
+  background-color: #84452c;
+  border-color: #84452c;
+}
+section {
+  background-color: #fff;
+  padding: 16px;
+  margin: 6px;
+  box-shadow: 0 0 7px -3px #000000;
+}
+.photo {
+  background-color: #FFF;
+  padding: 9px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 7px -3px #000000;
+}
+.photo img {
+  position: relative;
+  width: 200px;
+  border: 1px solid #f0F0F0;
+}

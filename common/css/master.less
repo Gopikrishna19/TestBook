@@ -1,5 +1,5 @@
 @back-color: #F8F8F8;
-@head-color: #FF8800;
+@head-color: #aa5939;
 @fore-color: #333333;
 @link-color: #3BE;
 @link-hover: darken(@link-color, 10%);
@@ -30,15 +30,44 @@ body {
     width: 95%;
     max-width: 1000px;
     margin: auto;
+    overflow: auto;
 }
 
 .header {
     background-color: @head-color;
+    @head-height: 69px;
 
     h2 {
         padding: 16px 4px;
         color: #fff;
         font-size: 2em;
+        float: left;
+    }
+
+    a {
+        float: right;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: @head-height;
+        margin-right: 50px;
+        font-weight: bold;
+        
+        &:hover {
+            color: #FFF;
+        }
+    }
+
+    .notify {
+        float: right;
+        margin-top: 22px;
+        background-image: url(../img/notify.png);
+        background-position: center bottom;
+        height: 25px;
+        width: 25px;        
+        margin-right: 16px;
+        
+        &:hover {
+            background-position: center top;
+        }
     }
 }
 
@@ -59,7 +88,6 @@ body {
 }
 
 .footer {
-    .center-it();
     padding-top: 4em;
     padding-left: 4px;
     font-size: 0.75em;
