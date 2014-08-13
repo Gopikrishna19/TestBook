@@ -7,7 +7,7 @@ class Model extends Database {
     public function read($table, $cond = NULL, $fields = "*") {
         $cond = $cond != NULL ? " WHERE ".$cond : "";
         $query = "SELECT ".$fields." FROM ".$table.$cond;
-        $result = mysqli_query($this->conn, $query);
+        $result = mysqli_query($this->conn, $query) or die(mysqli_error($this->conn));
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
@@ -15,7 +15,12 @@ class Model extends Database {
         $vstring = $this->arrayToString($values);
         $fstring = $this->arrayToString($fields, FALSE);
         $query = "INSERT INTO ".$table."(".$fstring.") VALUES(".$vstring.");";
-        echo $query."<br>";
+        mysqli_query($this->conn, $query) or die(mysqli_error($this->conn));
+    }
+
+    public function update($table, $columns, $cond = NULL){
+        $cond = $cond != NULL ? " WHERE ".$cond : "";
+        $query = "UPDATE ".$table." SET ".$columns.$cond.";";
         mysqli_query($this->conn, $query) or die(mysqli_error($this->conn));
     }
 

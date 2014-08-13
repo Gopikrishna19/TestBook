@@ -1,6 +1,6 @@
 </div>
 </div>
-<div class="footer">
+<div class="footer center-it">
     &copy; Copyright, 2014. All rights reserved
 </div>
 <script src="/common/js/jquery.js"></script>

@@ -29,6 +29,10 @@ class View {
         $this->header = "views/$masterpage/header.php";
         $this->footer = "views/$masterpage/footer.php";
     }
+
+    public function checkUserId() {
+        return (Session::getKey("id") == $this->id);
+    }
 }   
 
 ?>

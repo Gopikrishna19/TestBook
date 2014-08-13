@@ -42,9 +42,10 @@ $(function () {
     $(".register").submit(function (event) {
         error = 0;
         try {
-            checkUser();
+            var cond = !mailreg.test($("#email", register).val());
+            if (!cond) checkUser();
             toggleError($("#uname", register), $("#uname", register).val().trim() == "");
-            toggleError($("#email", register), !mailreg.test($("#email", register).val()));
+            toggleError($("#email", register), cond);
             toggleError($("#cmail", register), $("#email", register).val() != $("#cmail", register).val());
             toggleError($("#upass", register), !passreg.test($("#upass", register).val()));
         } catch (ex) {
