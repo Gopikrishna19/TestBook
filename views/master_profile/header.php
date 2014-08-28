@@ -3,6 +3,7 @@
     <head>
         <title>Testbook <?php echo isset($this->title)?"| ".$this->title:""; ?></title>
         <link href="/common/css/master.css" type="text/css" rel="stylesheet">
+        <script src="/common/js/jquery.js"></script>
 
         <?php for($i=0; $i<sizeof($this->css);$i++): ?>
         <link href="/views/<?php echo $this->controller."/css/".$this->css[$i].".css";?>" type="text/css" rel="stylesheet">
