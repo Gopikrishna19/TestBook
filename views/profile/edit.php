@@ -25,28 +25,25 @@
 ?>
 <form method="post" action="/profile/editSave">
     <section>
-        <label>Few words about me</label>
+        <span class="title">Few words about me</span>        
         <textarea class="txt" name="words"><?php echo $record['words']; ?></textarea>
     </section>
     <section>
-        <label>Education</label>
-        <select class="txt" name="education">
-            <?php getOptions($edu, $record['education']); ?>
-        </select>
-        <label>Work</label>
+        <span class="title">Education</span>
+        <select class="txt" name="education"><?php getOptions($edu, $record['education']); ?></select>
+        <span class="title">Work</span>
         <textarea class="txt" name="work"><?php echo $record['work'];?></textarea>
     </section>
     <section>
-        <label>Date of Birth</label>
-        <input type="date" name="dob" value="<?php echo $record['dob'];?>">
+        <span class="title">Date of Birth</span>
+        <input type="date" name="dob" class="txt" value="<?php echo $record['dob'];?>">
 
-        <label>Gender</label>
+        <span class="title">Gender</span>
         <label for="M"><input type="radio" id="M" name="gender" value="male" <?php echo $record['gender']=='male'? "checked":"" ; ?>> Male</label>
         <label for="F"><input type="radio" name="gender" id="F" value="female" <?php echo $record['gender']=='female'? "checked":"" ; ?>> Female</label>
-        <label>Marital Status</label>
-        <select name="single">
-            <?php getOptions($sin, $record['single']); ?>
-        </select>
+
+        <span class="title">Marital Status</span>
+        <select class="txt" name="single"><?php getOptions($sin, $record['single']); ?></select>
     </section>
-    <input type="submit" name="submit" value="Save">
+    <input type="submit" name="submit" value="Save" class="btn">
 </form>
